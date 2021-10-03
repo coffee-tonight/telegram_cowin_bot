@@ -5,6 +5,7 @@ import responses as R
 import requests, json
 import datetime
 import re
+import random as r
 
 # from decouple import config
 # API = config('API_KEY')
@@ -16,6 +17,18 @@ def start_command(update, context):
 
 def vaccine_command(update, context):
 	update.message.reply_text("Please send your pin")
+	
+
+def other_chat(update, context):
+	text = str(update.message.text).lower()
+	user = update.effective_user
+	words = [""]
+	words.append(text.split())
+	if text == "":
+		return ""
+	else:
+		update.message.reply_text("We got your message regarding, " words[r.randInt(0, len(words)-1)])
+	
 
 def about_me(update, context):
 	# print(update)
@@ -29,6 +42,10 @@ def about_me(update, context):
 		update.message.reply_text("good Yr!")
 	elif ch == "Crey0Le0":
 		update.message.reply_text("Tu chutiya hi rahega chodd!!")
+	elif ch == "ankit":
+		update.message.reply_text("Han bhai kya hal e")
+	elif ch == "Great":
+		update.message.reply_text("Toda nam nu great!!")
 	elif ch == None:
 		update.message.reply_text("Ohh bhaii kya baat hai mozz kr di oye!")
 
