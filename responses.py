@@ -11,11 +11,15 @@ def sample_responses(update, input_text):
 
 	if "help" in input_text.lower():
 		# print("Bot: Yes Pl, tell how may I help you?")
-		return "Yes Pl, tell me how may I help you? \n\nTry asking for vaccination or Slot booking details. \n\nOr use command /vaccine"
+		return "Yes Please, Tell me how may I help you? \n\nTry asking for vaccination or Slot booking details. \n\nOr use command /vaccine"
 
 	elif "how are you" in input_text.lower():
 		# print("Bot: I am fine")
 		return "I am fine, how about you?"
+	
+	elif "I am scared of Covid" in input_text.lower():
+		# print("Bot: Don't Worry")
+		return "Don't Worry!! and Don't Panic, Just follow all the Covid Protocols and ensure use of Masks and Proper Sanitisation and also maintain proper distance of 2 meters "
 	
 	else:
 		return "Sorry nothing detected!"
