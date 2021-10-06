@@ -10,13 +10,13 @@ import random as r
 # from decouple import config
 # API = config('API_KEY')
 
-print('Bot is starting')
+print('Bot Is Starting!!!')
 
 def start_command(update, context):
-	update.message.reply_text('Hello there, how may I help you')
+	update.message.reply_text('Hello There, How May I Help You?')
 
 def vaccine_command(update, context):
-	update.message.reply_text("Please send your pin")
+	update.message.reply_text("Please Send Your Pin")
 	
 
 def other_chat(update, context):
@@ -38,14 +38,14 @@ def about_me(update, context):
 	# print(update['message']['from']['username'])
 	ch = update['message']['chat']['username']
 
-	if ch == "sbishant":
-		update.message.reply_text("good Yr!")
+	if ch == "Bishant":
+		update.message.reply_text("Good Yr!")
 	elif ch == "Crey0Le0":
-		update.message.reply_text("Tu chutiya hi rahega chodd!!")
-	elif ch == "ankit":
-		update.message.reply_text("Han bhai kya hal e")
+		update.message.reply_text("Tu nhi samjhega bhai chodd!!")
+	elif ch == "Ankit":
+		update.message.reply_text("Han bhai kya haal hai?")
 	elif ch == "Great":
-		update.message.reply_text("Toda nam nu great!!")
+		update.message.reply_text("Oh veere!!! Tusi Great ho")
 	elif ch == None:
 		update.message.reply_text("Ohh bhaii kya baat hai mozz kr di oye!")
 
@@ -67,10 +67,10 @@ def handle_message(update, context):
 	slot_book_cmd = ["vaccine", "vaccinated", "book slot", "slot", "slot booking", "details"]
 	if any(x in text for x in slot_book_cmd):
 		# update.message.reply_text("Please enter your PIN")
-		response = "Please enter your PIN"
+		response = "Please Enter Your PIN (Postal Index Number)"
 	elif pin_val:
 		pin = text
-		update.message.reply_text("Showing results for 7 days from today!")
+		update.message.reply_text("Showing Results for 7 days from Today!")
 		response = R.slot_data(pin)
 	else:
 		response = R.sample_responses(update, text)
