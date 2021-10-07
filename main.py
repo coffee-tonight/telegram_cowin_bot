@@ -28,6 +28,18 @@ def other_chat(update, context):
 		return ""
 	else:
 		update.message.reply_text("We got your message regarding, " words[r.randInt(0, len(words)-1)])
+		
+
+def Important_chat(update, context):
+	text = str(update.message.text).lower()
+	user = update.effective_user
+	words = ["Vaccine, Medic, Injection, Remedevisir"]
+	words.append(text.split())
+	if text == "Are you Fully Vaccinated or Partially Vaccinated?":
+		update.message.reply_text("We got your details regarding vaccination " words[r.randInt(0, len(words)-1)])
+		return ""
+	else:
+		update.message.reply_text("We got your message regarding, " words[r.randInt(0, len(words)-1)])
 	
 
 def about_me(update, context):
