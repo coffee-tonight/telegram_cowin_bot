@@ -10,13 +10,13 @@ import random as r
 # from decouple import config
 # API = config('API_KEY')
 
-print('Bot Is Starting!!!')
+print('Bot Is Starting!!!') #initialise the bot
 
 def start_command(update, context):
 	update.message.reply_text('Hello There, How May I Help You?')
 
 def vaccine_command(update, context):
-	update.message.reply_text("Please Send Your Pin")
+	update.message.reply_text("Please Send Your Pin") #add pin prompt
 	
 
 def other_chat(update, context):
@@ -58,6 +58,10 @@ def about_me(update, context):
 		update.message.reply_text("Han bhai kya haal hai?")
 	elif ch == "Great":
 		update.message.reply_text("Oh veere!!! Tusi Great ho")
+	elif ch == "NCC Hero":
+		update.message.reply_text("Hello again, Sir Bishant")
+	elif ch == "Flutter Champ":
+		update.message.reply_text("Bishant bhai roxx")
 	elif ch == None:
 		update.message.reply_text("Ohh bhaii kya baat hai mozz kr di oye!")
 
