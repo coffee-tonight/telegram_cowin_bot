@@ -7,6 +7,9 @@ import datetime
 import re
 import random as r
 
+# pip install geopy
+from geopy.geocoders import Nominatim
+
 # from decouple import config
 # API = config('API_KEY')
 
@@ -95,7 +98,12 @@ def handle_message(update, context):
 	update.message.reply_text(response)
 
 def handle_location(update, context):
-	pass
+	loc = Nominatim(user_agent="GetLoc")
+	getLoc = loc.geocode("Gosainganj Lucknow")
+	print(getLoc.address)
+	print("Latitude = ", getLoc.latitude, "\n")
+	print("Longitude = ", getLoc.longitude)
+	return (getLoc.latitude, getLoc.longitude)
 
 def error(update, context):
 	print(f"Update {update} caused error {context.error}")
